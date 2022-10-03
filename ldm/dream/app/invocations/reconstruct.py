@@ -17,8 +17,9 @@ class RestoreFaceInvocation(BaseInvocation):
 
 
     def invoke(self, services: InvocationServices, session_id: str) -> ImageOutput: 
+        image = services.images.get(self.image.image_type, self.image.image_name)
         results = services.generate.upscale_and_reconstruct(
-            image_list     = [[self.image.get(), 0]],
+            image_list     = [[image, 0]],
             upscale        = None,
             strength       = self.strength, # GFPGAN strength
             save_original  = False,

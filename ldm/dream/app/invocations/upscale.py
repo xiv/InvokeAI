@@ -18,9 +18,10 @@ class UpscaleInvocation(BaseInvocation):
     strength: float               = Field(default=0.75, gt=0, le=1, description="The strength")
     level: Literal[2,4]           = Field(default=2, description = "The upscale level")
 
-    def invoke(self, services: InvocationServices, session_id: str) -> ImageOutput: 
+    def invoke(self, services: InvocationServices, session_id: str) -> ImageOutput:
+        image = services.images.get(self.image.image_type, self.image.image_name)
         results = services.generate.upscale_and_reconstruct(
-            image_list     = [[self.image.get(), 0]],
+            image_list     = [[image, 0]],
             upscale        = (self.level, self.strength),
             strength       = 0.0, # GFPGAN strength
             save_original  = False,
