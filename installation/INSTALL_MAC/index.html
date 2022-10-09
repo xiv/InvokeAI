@@ -1120,10 +1120,10 @@ the appropriate command for your Mac's architecture (Intel or M1).</p>
 <a id="__codelineno-0-59" name="__codelineno-0-59"></a>
 <a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="c1"># BEGIN ARCHITECTURE-DEPENDENT STEP #</span>
 <a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="c1"># For M1: Create the environment &amp; install packages</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="nv">PIP_EXISTS_ACTION</span><span class="o">=</span>w <span class="nv">CONDA_SUBDIR</span><span class="o">=</span>osx-arm64 conda env create -f environment-mac.yaml
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="nv">PIP_EXISTS_ACTION</span><span class="o">=</span>w <span class="nv">CONDA_SUBDIR</span><span class="o">=</span>osx-arm64 conda env create -f environment-mac.yml
 <a id="__codelineno-0-63" name="__codelineno-0-63"></a>
 <a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="c1"># For Intel: Create the environment &amp; install packages</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="nv">PIP_EXISTS_ACTION</span><span class="o">=</span>w <span class="nv">CONDA_SUBDIR</span><span class="o">=</span>osx-64 conda env create -f environment-mac.yaml
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="nv">PIP_EXISTS_ACTION</span><span class="o">=</span>w <span class="nv">CONDA_SUBDIR</span><span class="o">=</span>osx-64 conda env create -f environment-mac.yml
 <a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="c1"># END ARCHITECTURE-DEPENDENT STEP #</span>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>
 <a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="c1"># Activate the environment (you need to do this every time you want to run SD)</span>
@@ -1319,7 +1319,7 @@ quick feedback.</p>
 </code></pre></div>
 </div>
 <p>The InvokeAI version includes this fix in
-<a href="https://github.com/invoke-ai/InvokeAI/blob/main/environment-mac.yaml">environment-mac.yaml</a>.</p>
+<a href="https://github.com/invoke-ai/InvokeAI/blob/main/environment-mac.yml">environment-mac.yml</a>.</p>
 <h3 id="could-not-build-wheels-for-tokenizers">"Could not build wheels for tokenizers"<a class="headerlink" href="#could-not-build-wheels-for-tokenizers" title="Permanent link">#</a></h3>
 <p>I have not seen this error because I had Rust installed on my computer before I
 started playing with Stable Diffusion. The fix is to install Rust.</p>
