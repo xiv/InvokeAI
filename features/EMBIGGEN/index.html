@@ -450,6 +450,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../POSTPROCESS/" class="md-nav__link">
+        POSTPROCESS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../PROMPTS/" class="md-nav__link">
         Prompting Features
       </a>
@@ -478,20 +492,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../UPSCALE/" class="md-nav__link">
-        Upscale
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../VARIATIONS/" class="md-nav__link">
         Variations
       </a>
@@ -507,7 +507,7 @@
   
     <li class="md-nav__item">
       <a href="../WEB/" class="md-nav__link">
-        Barebones Web Server
+        InvokeAI Web Server
       </a>
     </li>
   
@@ -885,22 +885,22 @@ middle row would be <code>4 5 6</code>.</p>
 <h2 id="example-usage">Example Usage<a class="headerlink" href="#example-usage" title="Permanent link">#</a></h2>
 <p>Running Embiggen with 512x512 tiles on an existing image, scaling up by a factor of 2.5x;
 and doing the same again (default ESRGAN strength is 0.75, default overlap between tiles is 0.25):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>dream &gt; a photo of a forest at sunset -s <span class="m">100</span> -W <span class="m">512</span> -H <span class="m">512</span> -I outputs/forest.png -f <span class="m">0</span>.4 -embiggen <span class="m">2</span>.5
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>dream &gt; a photo of a forest at sunset -s <span class="m">100</span> -W <span class="m">512</span> -H <span class="m">512</span> -I outputs/forest.png -f <span class="m">0</span>.4 -embiggen <span class="m">2</span>.5 <span class="m">0</span>.75 <span class="m">0</span>.25
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>invoke &gt; a photo of a forest at sunset -s <span class="m">100</span> -W <span class="m">512</span> -H <span class="m">512</span> -I outputs/forest.png -f <span class="m">0</span>.4 -embiggen <span class="m">2</span>.5
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>invoke &gt; a photo of a forest at sunset -s <span class="m">100</span> -W <span class="m">512</span> -H <span class="m">512</span> -I outputs/forest.png -f <span class="m">0</span>.4 -embiggen <span class="m">2</span>.5 <span class="m">0</span>.75 <span class="m">0</span>.25
 </code></pre></div>
 <p>If your starting image was also 512x512 this should have taken 9 tiles.</p>
 <p>If there weren't enough clouds in the sky of that forest you just made
 (and that image is about 1280 pixels (512*2.5) wide A.K.A. three
 512x512 tiles with 0.25 overlaps wide) we can replace that top row of
 tiles:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>dream&gt; a photo of puffy clouds over a forest at sunset -s <span class="m">100</span> -W <span class="m">512</span> -H <span class="m">512</span> -I outputs/000002.seed.png -f <span class="m">0</span>.5 -embiggen_tiles <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>invoke&gt; a photo of puffy clouds over a forest at sunset -s <span class="m">100</span> -W <span class="m">512</span> -H <span class="m">512</span> -I outputs/000002.seed.png -f <span class="m">0</span>.5 -embiggen_tiles <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
 </code></pre></div>
 <h2 id="fixing-previously-generated-images">Fixing Previously-Generated Images<a class="headerlink" href="#fixing-previously-generated-images" title="Permanent link">#</a></h2>
 <p>It is easy to apply embiggen to any previously-generated file without having to
 look up the original prompt and provide an initial image. Just use the
 syntax <code>!fix path/to/file.png &lt;embiggen&gt;</code>. For example, you can rewrite the
 previous command to look like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>dream&gt; !fix ./outputs/000002.seed.png -embiggen_tiles 1 2 3
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>invoke&gt; !fix ./outputs/000002.seed.png -embiggen_tiles 1 2 3
 </code></pre></div>
 <p>A new file named <code>000002.seed.fixed.png</code> will be created in the output directory. Note that
 the <code>!fix</code> command does not replace the original file, unlike the behavior at generate time.
@@ -925,7 +925,7 @@ preserve the best parts from each.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2022</span>
       
         <br>
         Created:

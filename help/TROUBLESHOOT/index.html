@@ -386,6 +386,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../features/POSTPROCESS/" class="md-nav__link">
+        POSTPROCESS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../features/PROMPTS/" class="md-nav__link">
         Prompting Features
       </a>
@@ -414,20 +428,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/UPSCALE/" class="md-nav__link">
-        Upscale
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../features/VARIATIONS/" class="md-nav__link">
         Variations
       </a>
@@ -443,7 +443,7 @@
   
     <li class="md-nav__item">
       <a href="../../features/WEB/" class="md-nav__link">
-        Barebones Web Server
+        InvokeAI Web Server
       </a>
     </li>
   
@@ -989,14 +989,14 @@ restart at the <code>conda env create</code> step.</p>
 </code></pre></div>
 <hr />
 <h3 id="question_1"><strong>QUESTION</strong><a class="headerlink" href="#question_1" title="Permanent link">#</a></h3>
-<p><code>dream.py</code> crashes with the complaint that it can't find <code>ldm.simplet2i.py</code>. Or it complains that
+<p><code>invoke.py</code> crashes with the complaint that it can't find <code>ldm.simplet2i.py</code>. Or it complains that
 function is being passed incorrect parameters.</p>
 <h3 id="solution"><strong>SOLUTION</strong><a class="headerlink" href="#solution" title="Permanent link">#</a></h3>
 <p>Reinstall the stable diffusion modules. Enter the <code>stable-diffusion</code> directory and give the command
 <code>pip install -e .</code></p>
 <hr />
 <h3 id="question_2"><strong>QUESTION</strong><a class="headerlink" href="#question_2" title="Permanent link">#</a></h3>
-<p><code>dream.py</code> dies, complaining of various missing modules, none of which starts with `ldm``.</p>
+<p><code>invoke.py</code> dies, complaining of various missing modules, none of which starts with `ldm``.</p>
 <h3 id="solution_1"><strong>SOLUTION</strong><a class="headerlink" href="#solution_1" title="Permanent link">#</a></h3>
 <p>From within the <code>InvokeAI</code> directory, run <code>conda env update</code> This is also frequently the solution to
 complaints about an unknown function in a module.</p>
@@ -1039,7 +1039,7 @@ dependencies are already loaded.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2022</span>
       
         <br>
         Created:

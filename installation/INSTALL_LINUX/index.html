@@ -386,6 +386,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../features/POSTPROCESS/" class="md-nav__link">
+        POSTPROCESS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../features/PROMPTS/" class="md-nav__link">
         Prompting Features
       </a>
@@ -414,20 +428,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/UPSCALE/" class="md-nav__link">
-        Upscale
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../features/VARIATIONS/" class="md-nav__link">
         Variations
       </a>
@@ -443,7 +443,7 @@
   
     <li class="md-nav__item">
       <a href="../../features/WEB/" class="md-nav__link">
-        Barebones Web Server
+        InvokeAI Web Server
       </a>
     </li>
   
@@ -858,16 +858,16 @@ above.
 <li>Start generating images!</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a># for the pre-release weights use the -l or --liaon400m switch
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>(ldm) ~/InvokeAI$ python3 scripts/dream.py -l
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>(ldm) ~/InvokeAI$ python3 scripts/invoke.py -l
 <a id="__codelineno-6-3" name="__codelineno-6-3"></a>
 <a id="__codelineno-6-4" name="__codelineno-6-4"></a># for the post-release weights do not use the switch
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>(ldm) ~/InvokeAI$ python3 scripts/dream.py
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>(ldm) ~/InvokeAI$ python3 scripts/invoke.py
 <a id="__codelineno-6-6" name="__codelineno-6-6"></a>
 <a id="__codelineno-6-7" name="__codelineno-6-7"></a># for additional configuration switches and arguments, use -h or --help
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a>(ldm) ~/InvokeAI$ python3 scripts/dream.py -h
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>(ldm) ~/InvokeAI$ python3 scripts/invoke.py -h
 </code></pre></div>
 <ol>
-<li>Subsequently, to relaunch the script, be sure to run "conda activate ldm" (step 5, second command), enter the <code>InvokeAI</code> directory, and then launch the dream script (step 8). If you forget to activate the ldm environment, the script will fail with multiple <code>ModuleNotFound</code> errors.</li>
+<li>Subsequently, to relaunch the script, be sure to run "conda activate ldm" (step 5, second command), enter the <code>InvokeAI</code> directory, and then launch the invoke script (step 8). If you forget to activate the ldm environment, the script will fail with multiple <code>ModuleNotFound</code> errors.</li>
 </ol>
 <h2 id="updating-to-newer-versions-of-the-script">Updating to newer versions of the script<a class="headerlink" href="#updating-to-newer-versions-of-the-script" title="Permanent link">#</a></h2>
 <p>This distribution is changing rapidly. If you used the <code>git clone</code> method (step 5) to download the InvokeAI directory, then to update to the latest and greatest version, launch the Anaconda window, enter <code>InvokeAI</code> and type:</p>
@@ -880,7 +880,7 @@ above.
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2022</span>
       
         <br>
         Created:

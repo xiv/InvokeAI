@@ -386,6 +386,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../features/POSTPROCESS/" class="md-nav__link">
+        POSTPROCESS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../features/PROMPTS/" class="md-nav__link">
         Prompting Features
       </a>
@@ -414,20 +428,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/UPSCALE/" class="md-nav__link">
-        Upscale
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../features/VARIATIONS/" class="md-nav__link">
         Variations
       </a>
@@ -443,7 +443,7 @@
   
     <li class="md-nav__item">
       <a href="../../features/WEB/" class="md-nav__link">
-        Barebones Web Server
+        InvokeAI Web Server
       </a>
     </li>
   
@@ -663,13 +663,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#updating-to-newer-versions-of-the-script" class="md-nav__link">
-    Updating to newer versions of the script
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -807,13 +800,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#updating-to-newer-versions-of-the-script" class="md-nav__link">
-    Updating to newer versions of the script
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -871,23 +857,26 @@ the steps.</p>
 </li>
 <li>
 <p>Enter the newly-created InvokeAI folder. From this step forward make sure that you are working in the InvokeAI directory!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">cd</span> InvokeAI
-</code></pre></div>
 </li>
-<li>
-<p>Run the following two commands:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>conda env create       (step 6a)
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>cd InvokeAI
+</code></pre></div>
+<ol>
+<li>Run the following two commands:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>conda env create       (step 6a)
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a>conda activate ldm     (step 6b)
 </code></pre></div>
-<p>This will install all python requirements and activate the "ldm" environment
-which sets PATH and other environment variables properly.</p>
-<p>Note that the long form of the first command is <code>conda env create -f environment.yml</code>. If the
-environment file isn't specified, conda will default to <code>environment.yml</code>. You will need
-to provide the <code>-f</code> option if you wish to load a different environment file at any point.</p>
-</li>
+    This will install all python requirements and activate the "ldm" environment
+    which sets PATH and other environment variables properly.</p>
+<div class="highlight"><pre><span></span><code>Note that the long form of the first command is `conda env create -f environment.yml`. If the
+environment file isn&#39;t specified, conda will default to `environment.yml`. You will need
+to provide the `-f` option if you wish to load a different environment file at any point.
+</code></pre></div>
+<ol>
 <li>
 <p>Run the command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>python scripts\preload_models.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>python scripts<span class="se">\p</span>reload_models.py
 </code></pre></div>
 <p>This installs several machine learning models that stable diffusion requires.</p>
 <p>Note: This step is required. This was done because some users may might be
@@ -908,25 +897,23 @@ be downloaded just-in-time.</p>
   downloading may take a while.</li>
 </ol>
 <p>Now run the following commands from <strong>within the InvokeAI directory</strong> to copy the weights file to the right place:</p>
-<div class="highlight"><pre><span></span><code>```batch
-mkdir -p models\ldm\stable-diffusion-v1
-copy C:\path\to\sd-v1-4.ckpt models\ldm\stable-diffusion-v1\model.ckpt
-```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>mkdir -p models\ldm\stable-diffusion-v1
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>copy C:\path\to\sd-v1-4.ckpt models\ldm\stable-diffusion-v1\model.ckpt
 </code></pre></div>
 <p>Please replace <code>C:\path\to\sd-v1.4.ckpt</code> with the correct path to wherever you stashed this file. If you prefer not to copy or move the .ckpt file,
 you may instead create a shortcut to it from within <code>models\ldm\stable-diffusion-v1\</code>.</p>
 <ol>
 <li>
 <p>Start generating images!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a># for the pre-release weights
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>python scripts\dream.py -l
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># for the pre-release weights</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>python scripts<span class="se">\i</span>nvoke.py -l
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a># for the post-release weights
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>python scripts\dream.py
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># for the post-release weights</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>python scripts<span class="se">\i</span>nvoke.py
 </code></pre></div>
 </li>
 <li>
-<p>Subsequently, to relaunch the script, first activate the Anaconda command window (step 3),enter the InvokeAI directory (step 5, <code>cd \path\to\InvokeAI</code>), run <code>conda activate ldm</code> (step 6b), and then launch the dream script (step 9).</p>
+<p>Subsequently, to relaunch the script, first activate the Anaconda command window (step 3),enter the InvokeAI directory (step 5, <code>cd \path\to\InvokeAI</code>), run <code>conda activate ldm</code> (step 6b), and then launch the invoke script (step 9).</p>
 <p><strong>Note:</strong> Tildebyte has written an alternative
 <a href="https://github.com/invoke-ai/InvokeAI/wiki/Easy-peasy-Windows-install">"Easy peasy Windows install"</a>
 which uses the Windows Powershell and pew. If you are having trouble with
@@ -934,7 +921,7 @@ Anaconda on Windows, give this a try (or try it first!)</p>
 </li>
 </ol>
 <hr />
-<h2 id="updating-to-newer-versions-of-the-script">Updating to newer versions of the script<a class="headerlink" href="#updating-to-newer-versions-of-the-script" title="Permanent link">#</a></h2>
+<p>This distribution is changing rapidly. If you used the <code>git clone</code> method (step 5) to download the InvokeAI directory, then to update to the latest and greatest version, launch the Anaconda window, enter <code>InvokeAI</code>, and type:</p>
 <p>This distribution is changing rapidly. If you used the <code>git clone</code> method
 (step 5) to download the stable-diffusion directory, then to update to the
 latest and greatest version, launch the Anaconda window, enter
@@ -949,7 +936,7 @@ latest and greatest version, launch the Anaconda window, enter
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2022</span>
       
         <br>
         Created:

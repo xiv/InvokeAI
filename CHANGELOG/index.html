@@ -518,6 +518,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../features/POSTPROCESS/" class="md-nav__link">
+        POSTPROCESS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../features/PROMPTS/" class="md-nav__link">
         Prompting Features
       </a>
@@ -546,20 +560,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../features/UPSCALE/" class="md-nav__link">
-        Upscale
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../features/VARIATIONS/" class="md-nav__link">
         Variations
       </a>
@@ -575,7 +575,7 @@
   
     <li class="md-nav__item">
       <a href="../features/WEB/" class="md-nav__link">
-        Barebones Web Server
+        InvokeAI Web Server
       </a>
     </li>
   
@@ -950,9 +950,9 @@
 <li>Supports a Google Colab notebook for a standalone server running on Google hardware <a href="https://github.com/artmen1516">Arturo Mendivil</a></li>
 <li>WebUI supports GFPGAN/ESRGAN facial reconstruction and upscaling <a href="https://github.com/bakkot">Kevin Gibbons</a></li>
 <li>WebUI supports incremental display of in-progress images during generation <a href="https://github.com/bakkot">Kevin Gibbons</a></li>
-<li>Output directory can be specified on the dream&gt; command line.</li>
+<li>Output directory can be specified on the invoke&gt; command line.</li>
 <li>The grid was displaying duplicated images when not enough images to fill the final row <a href="https://github.com/SMUsamaShah">Muhammad Usama</a></li>
-<li>Can specify --grid on dream.py command line as the default.</li>
+<li>Can specify --grid on invoke.py command line as the default.</li>
 <li>Miscellaneous internal bug and stability fixes.</li>
 </ul>
 <hr />
@@ -960,13 +960,13 @@
 <ul>
 <li>Improved file handling, including ability to read prompts from standard input.
   (kudos to <a href="https://github.com/yunsaki">Yunsaki</a></li>
-<li>The web server is now integrated with the dream.py script. Invoke by adding --web to
-  the dream.py command arguments.</li>
+<li>The web server is now integrated with the invoke.py script. Invoke by adding --web to
+  the invoke.py command arguments.</li>
 <li>Face restoration and upscaling via GFPGAN and Real-ESGAN are now automatically
   enabled if the GFPGAN directory is located as a sibling to Stable Diffusion.
   VRAM requirements are modestly reduced. Thanks to both <a href="https://github.com/blessedcoolant">Blessedcoolant</a> and
   <a href="https://github.com/oceanswave">Oceanswave</a> for their work on this.</li>
-<li>You can now swap samplers on the dream&gt; command line. <a href="https://github.com/blessedcoolant">Blessedcoolant</a></li>
+<li>You can now swap samplers on the invoke&gt; command line. <a href="https://github.com/blessedcoolant">Blessedcoolant</a></li>
 </ul>
 <hr />
 <h2 id="v111-26-august-2022">v1.11 (26 August 2022)<a class="headerlink" href="#v111-26-august-2022" title="Permanent link">#</a></h2>
@@ -975,7 +975,7 @@
 <li>You now can specify a seed of -1 to use the previous image's seed, -2 to use the seed for the image generated before that, etc.
   Seed memory only extends back to the previous command, but will work on all images generated with the -n# switch.</li>
 <li>Variant generation support temporarily disabled pending more general solution.</li>
-<li>Created a feature branch named <strong>yunsaki-morphing-dream</strong> which adds experimental support for
+<li>Created a feature branch named <strong>yunsaki-morphing-invoke</strong> which adds experimental support for
   iteratively modifying the prompt and its parameters. Please see<a href="https://github.com/lstein/stable-diffusion/pull/86"> Pull Request #86</a>
   for a synopsis of how this works. Note that when this feature is eventually added to the main branch, it will may be modified
   significantly.</li>
@@ -997,7 +997,7 @@
 <hr />
 <h2 id="v108-24-august-2022">v1.08 (24 August 2022)<a class="headerlink" href="#v108-24-august-2022" title="Permanent link">#</a></h2>
 <ul>
-<li>Escape single quotes on the dream&gt; command before trying to parse. This avoids
+<li>Escape single quotes on the invoke&gt; command before trying to parse. This avoids
   parse errors.</li>
 <li>Removed instruction to get Python3.8 as first step in Windows install.
   Anaconda3 does it for you.</li>
@@ -1030,7 +1030,7 @@
   be regenerated with the indicated key</p>
 <ul>
 <li>It should no longer be possible for one image to overwrite another</li>
-<li>You can use the "cd" and "pwd" commands at the dream&gt; prompt to set and retrieve
+<li>You can use the "cd" and "pwd" commands at the invoke&gt; prompt to set and retrieve
   the path of the output directory.</li>
 </ul>
 <hr />
@@ -1060,7 +1060,7 @@
 <li>added k_lms sampling.
   <strong>Please run "conda env update" to load the k_lms dependencies!!</strong></li>
 <li>use half precision arithmetic by default, resulting in faster execution and lower memory requirements
-  Pass argument --full_precision to dream.py to get slower but more accurate image generation</li>
+  Pass argument --full_precision to invoke.py to get slower but more accurate image generation</li>
 </ul>
 <hr />
 <h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">#</a></h2>
@@ -1073,7 +1073,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2022</span>
       
         <br>
         Created:
