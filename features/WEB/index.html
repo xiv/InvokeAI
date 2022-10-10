@@ -538,13 +538,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#credits" class="md-nav__link">
-    Credits
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -861,13 +854,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#credits" class="md-nav__link">
-    Credits
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1151,19 +1137,56 @@ documentation for further explanation of the advanced features that
 were not covered here.</p>
 <p>The WebGUI is only rapid development. Check back regularly for
 updates!</p>
-<h2 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">#</a></h2>
-<p>Kudos to <a href="https://github.com/psychedelicious">Psychedelicious</a>,
-<a href="https://github.com/blessedcoolant">BlessedCoolant</a>, <a href="https://github.com/TesseractCat">Tesseract
-Cat</a>,
-<a href="https://github.com/dagf2101">dagf2101</a>, and many others who
-contributed to this code.</p>
+<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h1>
+<h2 id="additional-options">Additional Options<a class="headerlink" href="#additional-options" title="Permanent link">#</a></h2>
+<p><code>--web_develop</code>    -   Starts the web server in development mode.</p>
+<p><code>--web_verbose</code>    -   Enables verbose logging</p>
+<p><code>--cors [CORS ...]</code>    -   Additional allowed origins, comma-separated</p>
+<p><code>--host HOST</code>    -   Web server: Host or IP to listen on. Set to 0.0.0.0 to
+  accept traffic from other devices on your network.</p>
+<p><code>--port PORT</code>    -   Web server: Port to listen on</p>
+<p><code>--gui</code>    -   Start InvokeAI GUI - This is the "desktop mode" version of the web app. It uses Flask 
+  to create a desktop app experience of the webserver.</p>
+<h2 id="web-specific-features">Web Specific Features<a class="headerlink" href="#web-specific-features" title="Permanent link">#</a></h2>
+<p>The web experience offers an incredibly easy-to-use experience for interacting with the InvokeAI toolkit. 
+For detailed guidance on individual features, see the Feature-specific help documents available in this directory.
+Note that the latest functionality available in the CLI may not always be available in the Web interface.</p>
+<h3 id="dark-mode-light-mode">Dark Mode &amp; Light Mode<a class="headerlink" href="#dark-mode-light-mode" title="Permanent link">#</a></h3>
+<p>The InvokeAI interface is available in a nano-carbon black &amp; purple Dark Mode, and a "burn your eyes out Nosferatu" Light Mode. These can be toggled by clicking the Sun/Moon icons at the top right of the interface. </p>
+<p><img alt="InvokeAI Web Server - Dark Mode" src="../../assets/invoke_web_dark.png" /></p>
+<p><img alt="InvokeAI Web Server - Light Mode" src="../../assets/invoke_web_light.png" /></p>
+<h3 id="invocation-toolbar">Invocation Toolbar<a class="headerlink" href="#invocation-toolbar" title="Permanent link">#</a></h3>
+<p>The left side of the InvokeAI interface is available for customizing the prompt and the settings used for invoking your new image. Typing your prompt into the open text field and clicking the Invoke button will produce the image based on the settings configured in the toolbar. </p>
+<p>See below for additional documentation related to each feature:
+- <a href="../CLI/">Core Prompt Settings</a>
+- <a href="../VARIATIONS/">Variations</a>
+- <a href="./UPSCALE.md">Upscaling</a>
+- <a href="../IMG2IMG/">Image to Image</a>
+- <a href="../INPAINTING/">Inpainting</a>
+- <a href="../OTHER/">Other</a></p>
+<h3 id="invocation-gallery">Invocation Gallery<a class="headerlink" href="#invocation-gallery" title="Permanent link">#</a></h3>
+<p>The currently selected --outdir (or the default outputs folder) will display all previously generated files on load. As new invocations are generated, these will be dynamically added to the gallery, and can be previewed by selecting them. Each image also has a simple set of actions (e.g., Delete, Use Seed, Use All Parameters, etc.) that can be accessed by hovering over the image.</p>
+<h3 id="image-workspace">Image Workspace<a class="headerlink" href="#image-workspace" title="Permanent link">#</a></h3>
+<p>When an image from the Invocation Gallery is selected, or is generated, the image will be displayed within the center of the interface. A quickbar of common image interactions are displayed along the top of the image, including:
+- Use image in the <code>Image to Image</code> workflow
+- Initialize Face Restoration on the selected file
+- Initialize Upscaling on the selected file
+- View File metadata and details
+- Delete the file</p>
+<h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">#</a></h2>
+<p>A huge shout-out to the core team working to make this vision a
+reality, including
+<a href="https://github.com/psychedelicious">psychedelicious</a>,
+<a href="https://github.com/Kyle0654">Kyle0654</a> and
+<a href="https://github.com/blessedcoolant">blessedcoolant</a>. <a href="https://github.com/hipsterusername">hipsterusername</a>
+was the team's unofficial cheerleader and added tooltips/docs.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 4, 2022</span>
       
         <br>
         Created:
