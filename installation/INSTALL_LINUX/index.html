@@ -828,19 +828,16 @@ above.
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>(invokeai) ~/InvokeAI$ python3 scripts/preload_models.py
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>!!! note
-
-    This step is necessary because I modified the original just-in-time
-    model loading scheme to allow the script to work on GPU machines that are not
-    internet connected. See [Preload Models](../features/OTHER.md#preload-models)
-</code></pre></div>
+<p><em>Note:</em> This step is necessary because we modified the original just-in-time
+model loading scheme to allow the script to work on GPU machines that are not
+internet connected. See <a href="../../features/OTHER/#preload-models">Preload Models</a></p>
 <ol>
 <li>
 <p>Now you need to install the weights for the stable diffusion model.</p>
 <ul>
 <li>For running with the released weights, you will first need to set up an acount
     with <a href="https://huggingface.co">Hugging Face</a>.</li>
-<li>Use your credentials to log in, and then point your browser <a href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original.">here</a></li>
+<li>Use your credentials to log in, and then point your browser <a href="https://huggingface.co/CompVis/stable-diffusion-v-1-4-original">here</a>.</li>
 <li>You may be asked to sign a license agreement at this point.</li>
 <li>Click on "Files and versions" near the top of the page, and then click on the
     file named "sd-v1-4.ckpt". You'll be taken to a page that prompts you to click
@@ -857,14 +854,14 @@ above.
 <ol>
 <li>Start generating images!</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a># for the pre-release weights use the -l or --liaon400m switch
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>(invokeai) ~/InvokeAI$ python3 scripts/invoke.py -l
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a># for the command-line interface (CLI):
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>(invokeai) ~/InvokeAI$ python3 scripts/invoke.py
 <a id="__codelineno-6-3" name="__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a># for the post-release weights do not use the switch
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>(invokeai) ~/InvokeAI$ python3 scripts/invoke.py
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a># for additional configuration switches and arguments, use -h or --help
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>(invokeai) ~/InvokeAI$ python3 scripts/invoke.py -h
 <a id="__codelineno-6-6" name="__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a># for additional configuration switches and arguments, use -h or --help
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a>(invokeai) ~/InvokeAI$ python3 scripts/invoke.py -h
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a># for the web GUI, launch like this and point your browser at http://localhost:9090
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>(invokeai) ~/InvokeAI$ python3 scripts/invoke.py --web
 </code></pre></div>
 <ol>
 <li>Subsequently, to relaunch the script, be sure to run "conda
