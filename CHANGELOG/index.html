@@ -281,13 +281,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v113-in-process" class="md-nav__link">
-    v1.13 (in process)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#v112-28-august-2022" class="md-nav__link">
     v1.12 (28 August 2022)
   </a>
@@ -829,13 +822,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v113-in-process" class="md-nav__link">
-    v1.13 (in process)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#v112-28-august-2022" class="md-nav__link">
     v1.12 (28 August 2022)
   </a>
@@ -945,15 +931,74 @@
 
 
 <h1 id="changelog"><strong>Changelog</strong><a class="headerlink" href="#changelog" title="Permanent link">#</a></h1>
-<h2 id="v113-in-process">v1.13 (in process)<a class="headerlink" href="#v113-in-process" title="Permanent link">#</a></h2>
 <ul>
-<li>Supports a Google Colab notebook for a standalone server running on Google hardware <a href="https://github.com/artmen1516">Arturo Mendivil</a></li>
-<li>WebUI supports GFPGAN/ESRGAN facial reconstruction and upscaling <a href="https://github.com/bakkot">Kevin Gibbons</a></li>
-<li>WebUI supports incremental display of in-progress images during generation <a href="https://github.com/bakkot">Kevin Gibbons</a></li>
-<li>Output directory can be specified on the invoke&gt; command line.</li>
-<li>The grid was displaying duplicated images when not enough images to fill the final row <a href="https://github.com/SMUsamaShah">Muhammad Usama</a></li>
+<li>
+<p>v2.0.0 (9 October 2022)</p>
+</li>
+<li>
+<p><code>dream.py</code> script renamed <code>invoke.py</code>. A <code>dream.py</code> script wrapper remains
+    for backward compatibility.</p>
+</li>
+<li>Completely new WebGUI - launch with <code>python3 scripts/invoke.py --web</code></li>
+<li>Support for <a href="https://github.com/invoke-ai/InvokeAI/blob/main/docs/features/INPAINTING.md">inpainting</a> and <a href="https://github.com/invoke-ai/InvokeAI/blob/main/docs/features/OUTPAINTING.md">outpainting</a></li>
+<li>img2img runs on all k* samplers</li>
+<li>Support for <a href="https://github.com/invoke-ai/InvokeAI/blob/main/docs/features/PROMPTS.md#negative-and-unconditioned-prompts">negative prompts</a></li>
+<li>Support for CodeFormer face reconstruction</li>
+<li>Support for Textual Inversion on Macintoshes</li>
+<li>Support in both WebGUI and CLI for <a href="https://github.com/invoke-ai/InvokeAI/blob/main/docs/features/POSTPROCESS.md">post-processing of previously-generated images</a>
+    using facial reconstruction, ESRGAN upscaling, outcropping (similar to DALL-E infinite canvas),
+    and "embiggen" upscaling. See the <code>!fix</code> command.</li>
+<li>New <code>--hires</code> option on <code>invoke&gt;</code> line allows <a href="https://github.com/invoke-ai/InvokeAI/blob/main/docs/features/CLI.m#this-is-an-example-of-txt2img">larger images to be created without duplicating elements</a>, at the cost of some performance.</li>
+<li>New <code>--perlin</code> and <code>--threshold</code> options allow you to add and control variation
+    during image generation (see <a href="https://github.com/invoke-ai/InvokeAI/blob/main/docs/features/OTHER.md#thresholding-and-perlin-noise-initialization-options">Thresholding and Perlin Noise Initialization</a></li>
+<li>Extensive metadata now written into PNG files, allowing reliable regeneration of images
+    and tweaking of previous settings.</li>
+<li>Command-line completion in <code>invoke.py</code> now works on Windows, Linux and Mac platforms.</li>
+<li>Improved <a href="https://github.com/invoke-ai/InvokeAI/blob/main/docs/features/CLI.m">command-line completion behavior</a>.
+    New commands added:<ul>
+<li>List command-line history with <code>!history</code></li>
+<li>Search command-line history with <code>!search</code></li>
+<li>Clear history with <code>!clear</code></li>
+</ul>
+</li>
+<li>
+<p>Deprecated <code>--full_precision</code> / <code>-F</code>. Simply omit it and <code>invoke.py</code> will auto
+    configure. To switch away from auto use the new flag like <code>--precision=float32</code>.</p>
+</li>
+<li>
+<p>v1.14 (11 September 2022)</p>
+</li>
+<li>
+<p>Memory optimizations for small-RAM cards. 512x512 now possible on 4 GB GPUs.</p>
+</li>
+<li>Full support for Apple hardware with M1 or M2 chips.</li>
+<li>Add "seamless mode" for circular tiling of image. Generates beautiful effects.
+    (<a href="https://github.com/prixt">prixt</a>).</li>
+<li>Inpainting support.</li>
+<li>Improved web server GUI.</li>
+<li>
+<p>Lots of code and documentation cleanups.</p>
+</li>
+<li>
+<p>v1.13 (3 September 2022</p>
+</li>
+<li>
+<p>Support image variations (see <a href="docs/features/VARIATIONS.md">VARIATIONS</a>
+    (<a href="https://github.com/bakkot">Kevin Gibbons</a> and many contributors and reviewers)</p>
+</li>
+<li>Supports a Google Colab notebook for a standalone server running on Google hardware
+    <a href="https://github.com/artmen1516">Arturo Mendivil</a></li>
+<li>WebUI supports GFPGAN/ESRGAN facial reconstruction and upscaling
+    <a href="https://github.com/bakkot">Kevin Gibbons</a></li>
+<li>WebUI supports incremental display of in-progress images during generation
+    <a href="https://github.com/bakkot">Kevin Gibbons</a></li>
+<li>A new configuration file scheme that allows new models (including upcoming
+    stable-diffusion-v1.5) to be added without altering the code.
+    (<a href="https://github.com/maddavid12">David Wager</a>)</li>
 <li>Can specify --grid on invoke.py command line as the default.</li>
 <li>Miscellaneous internal bug and stability fixes.</li>
+<li>Works on M1 Apple hardware.</li>
+<li>Multiple bug fixes.</li>
 </ul>
 <hr />
 <h2 id="v112-28-august-2022">v1.12 (28 August 2022)<a class="headerlink" href="#v112-28-august-2022" title="Permanent link">#</a></h2>
@@ -1073,7 +1118,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 10, 2022</span>
       
         <br>
         Created:
