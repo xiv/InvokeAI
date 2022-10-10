@@ -864,11 +864,15 @@ the steps.</p>
 <ol>
 <li>Run the following two commands:</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>conda env create -f install/environment.yml  (step 6a)
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>conda env create       (step 6a)
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a>conda activate invokeai     (step 6b)
 </code></pre></div>
     This will install all python requirements and activate the "invokeai" environment
     which sets PATH and other environment variables properly.</p>
+<div class="highlight"><pre><span></span><code>Note that the long form of the first command is `conda env create -f environment.yml`. If the
+environment file isn&#39;t specified, conda will default to `environment.yml`. You will need
+to provide the `-f` option if you wish to load a different environment file at any point.
+</code></pre></div>
 <ol>
 <li>
 <p>Run the command:</p>
@@ -901,11 +905,11 @@ you may instead create a shortcut to it from within <code>models\ldm\stable-diff
 <ol>
 <li>
 <p>Start generating images!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># for the command-line interface</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>python scripts<span class="se">\i</span>nvoke.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># for the pre-release weights</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>python scripts<span class="se">\i</span>nvoke.py -l
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># for the Web GUI, launch and point your browser at http://localhost:9090</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>python scripts<span class="se">\i</span>nvoke.py --web
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># for the post-release weights</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>python scripts<span class="se">\i</span>nvoke.py
 </code></pre></div>
 </li>
 <li>
@@ -923,7 +927,7 @@ Anaconda on Windows, give this a try (or try it first!)</p>
 latest and greatest version, launch the Anaconda window, enter
 <code>stable-diffusion</code>, and type:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>git pull
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>conda env update -f install/environment.yml
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>conda env update
 </code></pre></div>
 <p>This will bring your local copy into sync with the remote one.</p>
 
