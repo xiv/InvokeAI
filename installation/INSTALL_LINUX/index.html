@@ -816,7 +816,7 @@ current anaconda environment - <code>(base)</code>.</p>
 <li>Use anaconda to copy necessary python packages, create a new python
    environment named <code>invokeai</code> and activate the environment.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>(base) ~/InvokeAI$ conda env create
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>(base) ~/InvokeAI$ conda env create -f install/environment.yml
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>(base) ~/InvokeAI$ conda activate invokeai
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a>(invokeai) ~/InvokeAI$
 </code></pre></div>
@@ -867,7 +867,11 @@ above.
 <a id="__codelineno-6-8" name="__codelineno-6-8"></a>(invokeai) ~/InvokeAI$ python3 scripts/invoke.py -h
 </code></pre></div>
 <ol>
-<li>Subsequently, to relaunch the script, be sure to run "conda activate invokeai" (step 5, second command), enter the <code>InvokeAI</code> directory, and then launch the invoke script (step 8). If you forget to activate the 'invokeai' environment, the script will fail with multiple <code>ModuleNotFound</code> errors.</li>
+<li>Subsequently, to relaunch the script, be sure to run "conda
+activate invokeai" (step 5, second command), enter the <code>InvokeAI</code>
+directory, and then launch the invoke script (step 8). If you forget
+to activate the 'invokeai' environment, the script will fail with
+multiple <code>ModuleNotFound</code> errors.</li>
 </ol>
 <h2 id="updating-to-newer-versions-of-the-script">Updating to newer versions of the script<a class="headerlink" href="#updating-to-newer-versions-of-the-script" title="Permanent link">#</a></h2>
 <p>This distribution is changing rapidly. If you used the <code>git clone</code> method (step 5) to download the InvokeAI directory, then to update to the latest and greatest version, launch the Anaconda window, enter <code>InvokeAI</code> and type:</p>
