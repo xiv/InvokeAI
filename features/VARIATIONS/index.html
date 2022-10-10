@@ -497,6 +497,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#variations-and-samplers" class="md-nav__link">
+    Variations and Samplers
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -800,6 +807,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#variations-and-samplers" class="md-nav__link">
+    Variations and Samplers
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -908,13 +922,22 @@ two images. Here's the one I like best:</p>
 <p>As you can see, this is a very powerful tool, which when combined with subprompt
 weighting, gives you great control over the content and quality of your
 generated images.</p>
+<h2 id="variations-and-samplers">Variations and Samplers<a class="headerlink" href="#variations-and-samplers" title="Permanent link">#</a></h2>
+<p>The sampler you choose has a strong effect on variation strength. Some
+samplers, such as <code>k_euler_a</code> are very "creative" and produce significant
+amounts of image-to-image variation even when the seed is fixed and the
+<code>-v</code> argument is very low. Others are more deterministic. Feel free to
+experiment until you find the combination that you like.</p>
+<p>Also be aware of the <a href="../OTHER/#thresholding-and-perlin-noise-initialization-options">Perlin Noise</a>
+feature, which provides another way of introducing variability into your
+image generation requests.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 10, 2022</span>
       
         <br>
         Created:
