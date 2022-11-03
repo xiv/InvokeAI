@@ -52,7 +52,7 @@ an issue on Github and we will do our best to help.
   
       Choose the appropriate architecture for your system and install miniconda:
 
-        === "M1 arm64"
+    === "M1 arm64"
 
             ```bash title="Install miniconda for M1 arm64"
             curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh \
@@ -60,7 +60,7 @@ an issue on Github and we will do our best to help.
             /bin/bash Miniconda3-latest-MacOSX-arm64.sh
             ```
 
-        === "Intel x86_64"
+    === "Intel x86_64"
 
             ```bash title="Install miniconda for Intel"
             curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh \
