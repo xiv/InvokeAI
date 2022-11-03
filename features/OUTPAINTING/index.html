@@ -1022,19 +1022,20 @@ model</a>.</p>
 </figure>
 <p>Pretty nice, but it's annoying that the top of her head is cut
 off. She's also a bit off center. Let's fix that!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>invoke&gt; !fix images/curly.png --outcrop top <span class="m">64</span> right <span class="m">64</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>invoke&gt; !fix images/curly.png --outcrop top <span class="m">128</span> right <span class="m">64</span> bottom <span class="m">64</span>
 </code></pre></div>
 <p>This is saying to apply the <code>outcrop</code> extension by extending the top
-of the image by 64 pixels, and the right of the image by the same
-amount. You can use any combination of top|left|right|bottom, and
+of the image by 128 pixels, and the right and bottom of the image by
+64 pixels. You can use any combination of top|left|right|bottom, and
 specify any number of pixels to extend. You can also abbreviate
 <code>--outcrop</code> to <code>-c</code>.</p>
 <p>The result looks like this:</p>
 <figure>
-<p><img alt="curly_woman_outcrop" src="../../assets/outpainting/curly-outcrop.png" /></p>
+<p><img alt="curly_woman_outcrop" src="../../assets/outpainting/curly-outcrop-2.png" /></p>
 </figure>
-<p>The new image is actually slightly larger than the original (576x576,
-because 64 pixels were added to the top and right sides.)</p>
+<p>The new image is larger than the original (576x704)
+because 64 pixels were added to the top and right sides. You will
+need enough VRAM to process an image of this size.</p>
 <p>A number of caveats:</p>
 <ol>
 <li>
@@ -1049,6 +1050,19 @@ image.</p>
 you'll get a slightly different result. You can run it repeatedly
 until you get an image you like. Unfortunately <code>!fix</code> does not
 currently respect the <code>-n</code> (<code>--iterations</code>) argument.</p>
+</li>
+<li>
+<p>Your results will be <em>much</em> better if you use the <code>inpaint-1.5</code>
+model released by runwayML and installed by default by
+<code>scripts/preload_models.py</code>. This model was trained specifically to
+harmoniously fill in image gaps. The standard model will work as well,
+but you may notice color discontinuities at the border.</p>
+</li>
+<li>
+<p>When using the <code>inpaint-1.5</code> model, you may notice subtle changes
+to the area within the original image. This is because the model
+performs an encoding/decoding on the image as a whole. This does not
+occur with the standard model.</p>
 </li>
 </ol>
 <h2 id="outpaint">Outpaint<a class="headerlink" href="#outpaint" title="Permanent link">#</a></h2>
@@ -1090,7 +1104,7 @@ and <code>-s</code>.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2022</span>
       
         <br>
         Created:
