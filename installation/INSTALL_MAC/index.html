@@ -952,24 +952,24 @@ an issue on Github and we will do our best to help.</p>
 </div>
 </div>
 <p>Choose the appropriate architecture for your system and install miniconda:</p>
-<div class="highlight"><pre><span></span><code>=== &quot;M1 arm64&quot;
-
-    ```bash title=&quot;Install miniconda for M1 arm64&quot;
-    curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh \
-      -o Miniconda3-latest-MacOSX-arm64.sh
-    /bin/bash Miniconda3-latest-MacOSX-arm64.sh
-    ```
-
-=== &quot;Intel x86_64&quot;
-
-    ```bash title=&quot;Install miniconda for Intel&quot;
-    curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh \
-      -o Miniconda3-latest-MacOSX-x86_64.sh
-    /bin/bash Miniconda3-latest-MacOSX-x86_64.sh
-    ```
-</code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">with pyenv</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">M1 arm64</label><label for="__tabbed_2_2">Intel x86_64</label><label for="__tabbed_2_3">with pyenv</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```bash title=&quot;Install miniconda for M1 arm64&quot;
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh \
+  -o Miniconda3-latest-MacOSX-arm64.sh
+/bin/bash Miniconda3-latest-MacOSX-arm64.sh
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```bash title=&quot;Install miniconda for Intel&quot;
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh \
+  -o Miniconda3-latest-MacOSX-x86_64.sh
+/bin/bash Miniconda3-latest-MacOSX-x86_64.sh
+```
+</code></pre></div>
+</div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>brew install pyenv-virtualenv
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>pyenv install anaconda3-2022.05
@@ -1311,7 +1311,7 @@ use ARM packages, and use <code>nomkl</code> as described above.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2022</span>
       
         <br>
         Created:
