@@ -15,8 +15,9 @@ InvocationOutputsUnion = Annotated[Union[BaseInvocationOutput.get_all_subclasses
 
 class InvocationHistoryEntry(BaseModel):
     """The history of an invoked node"""
-    invocation: InvocationsUnion
-    outputs: InvocationOutputsUnion
+    invocation_id: str              = Field(description = "The id of the invocation definition")
+    invocation: InvocationsUnion    = Field(description = "The invocation that was run, with all parameters filled in")
+    outputs: InvocationOutputsUnion = Field(description = "Any outputs of the invocation")
 
 
 class InvocationFieldLink(BaseModel):
@@ -55,6 +56,17 @@ def is_field_compatible(
 
 def SessionConflict(Exception):
     pass
+
+
+# TODO FOR ITERATIONS:
+# [ ] Change history entries to use "definition" id and a separate id for "execution" id (including any iteration stack)
+# [ ] Change "ready" or "next" node calculation to mark nodes as complete when all iterations have run
+# [ ] Support single item to list() links, and vice-versa?
+# [ ] Add a node type with dynamic inputs/outputs? To zip/unzip inputs and outputs
+# [ ] Add a "range" node?
+# [ ] List nodes are locked once outputs are "zipped"? Or maybe easier to just lock them once they start iterating
+# [ ] Expand list nodes immediately upon execution, but only to the next level? So sublists can expand upon being reached (e.g. range vs grid nodes)
+# [ ] Some api for getting node expansions?
 
 
 class InvocationSession(BaseModel):
@@ -228,7 +240,9 @@ class InvocationSession(BaseModel):
     
     
     def _complete_invocation(self, invocation: BaseInvocation, outputs: BaseInvocationOutput):
+        # Store history entry
         self.invocation_results[invocation.id] = InvocationHistoryEntry(
+            invocation_id = invocation.id,
             invocation = invocation,
             outputs = outputs)
         self.history.append(invocation.id)
